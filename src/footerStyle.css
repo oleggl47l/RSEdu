@@ -1,0 +1,22 @@
+.footer {
+    background-color: #023047; /* Цвет фона */
+    padding: 20px; /* Внутренний отступ */
+    text-align: center; /* Выравнивание содержимого по центру */
+}
+
+.social-icons {
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Отступы между иконками */
+}
+
+.social-icons img {
+    width: 40px; /* Задаем одинаковую ширину для иконок */
+    height: auto; /* Сохраняем пропорции */
+}
+
+.copyright {
+    color: white; /* Цвет текста */
+}

@@ -1,0 +1,110 @@
+.custom-button {
+    background-color: #FB8500;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    width: 330px;
+    height: 90px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #ff901a; /* Новый цвет при наведении */
+}
+
+.custom-button:active {
+    background-color: #f56017 !important; /* Новый цвет при нажатии */
+}
+
+.container {
+    margin-top: 20px;
+    max-width: 1000px;
+}
+
+.card {
+    margin-block: 27px;
+    border: none;
+    text-align: center;
+    background-color: #8ECAE6; /* Изменение цвета фона */
+    border-radius: 20px; /* Закругление краев */
+}
+
+.card-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 20px;
+    color: #ffffff;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body > div {
+    flex: 1;
+}
+
+.card-body .left-content {
+    text-align: center;
+}
+
+.card-body .right-content {
+    text-align: left;
+}
+
+h4 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+ul {
+    list-style-type: disc;
+    font-size: 18px;
+    word-wrap: break-word;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+/* Ваши стили из предыдущего кода останутся без изменений */
+
+.image-card {
+    background-color: #FFB703; /* Цвет фона */
+    margin-top: 27px;
+    border-radius: 20px; /* Закругление краев */
+}
+
+.image-card-body {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    padding: 20px;
+}
+
+.image-with-text {
+    display: flex;
+    align-items: center; /* Выравнивает элементы по центру вертикали */
+    margin: 20px; /* Добавляет немного отступа между элементами */
+    text-align: center; /* Выравниваем текст по центру */
+}
+
+.image-with-text img {
+    border-radius: 10px; /* Закругляет углы изображения */
+    width: 200px; /* Задаем одинаковую ширину для всех изображений */
+    height: auto; /* Сохраняем пропорции изображений */
+    margin-right: 20px; /* Отступ между изображением и текстом */
+}
+
+.image-with-text p {
+    margin: 0; /* Убираем внешние отступы у абзацев */
+    font-weight: bold; /* Делаем текст жирным */
+    text-align: left;
+}
+
