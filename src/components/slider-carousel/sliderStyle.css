@@ -16,7 +16,8 @@
 
 .carousel-wrapper {
     position: relative;
-    max-width: 600px;
+    max-width: 980px;
+    max-height: 400px;
     margin: 27px;
 }
 .carousel-wrapper input {
@@ -62,18 +63,21 @@
 }
 
 .nav-dot[for=slide1] {
-    left: 40%;
+    left: 44%;
+    margin: auto;
 }
 
 #slide1:checked ~ .carousel ul {
-    left: 0%;
+    left: 0;
 }
 #slide1:checked ~ .nav-dot[for=slide1] {
     opacity: 1;
 }
 
 .nav-dot[for=slide2] {
-    left: 45%;
+    left: 47%;
+    margin: auto;
+
 }
 
 #slide2:checked ~ .carousel ul {
@@ -85,6 +89,8 @@
 
 .nav-dot[for=slide3] {
     left: 50%;
+    margin: auto;
+
 }
 
 #slide3:checked ~ .carousel ul {
@@ -95,7 +101,9 @@
 }
 
 .nav-dot[for=slide4] {
-    left: 55%;
+    left: 53%;
+    margin: auto;
+
 }
 
 #slide4:checked ~ .carousel ul {
@@ -106,7 +114,9 @@
 }
 
 .nav-dot[for=slide5] {
-    left: 60%;
+    left: 56%;
+    margin: auto;
+
 }
 
 #slide5:checked ~ .carousel ul {
