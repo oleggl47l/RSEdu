@@ -1,0 +1,6 @@
+@backendRSEdu_HostAddress = http://localhost:5037
+
+GET {{backendRSEdu_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
