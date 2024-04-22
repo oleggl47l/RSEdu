@@ -3,9 +3,9 @@ import './cardStyle.css';
 export const NewsCard = () => {
     return (
         <Container className="container">
-            <Card className="image-card">
-                <Card.Title>News!</Card.Title>
-                <Card.Body className="image-card-body">
+            <Card className="image-custom-card">
+                <Card.Title className="card-custom-title">News!</Card.Title>
+                <Card.Body className="image-custom-card-body">
                     <ul className="image-list">
                         <li className="image-with-text">
                             <img

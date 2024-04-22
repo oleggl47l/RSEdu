@@ -25,7 +25,7 @@
     max-width: 1000px;
 }
 
-.card {
+.card-custom {
     margin-block: 27px;
     border: none;
     text-align: center;
@@ -33,28 +33,28 @@
     border-radius: 20px; /* Закругление краев */
 }
 
-.card-title {
+.card-custom-title {
     font-size: 40px;
     font-weight: 700;
     margin: 20px;
     color: #ffffff;
 }
 
-.card-body {
+.card-custom-body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card-body > div {
+.card-custom-body > div {
     flex: 1;
 }
 
-.card-body .left-content {
+.card-custom-body .left-content {
     text-align: center;
 }
 
-.card-body .right-content {
+.card-custom-body .right-content {
     text-align: left;
 }
 
@@ -75,13 +75,13 @@ ul {
 
 /* Ваши стили из предыдущего кода останутся без изменений */
 
-.image-card {
+.image-custom-card {
     background-color: #FFB703; /* Цвет фона */
     margin-top: 27px;
     border-radius: 20px; /* Закругление краев */
 }
 
-.image-card-body {
+.image-custom-card-body {
     display: flex;
     flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
     justify-content: space-between; /* Распределяет пространство между элементами */

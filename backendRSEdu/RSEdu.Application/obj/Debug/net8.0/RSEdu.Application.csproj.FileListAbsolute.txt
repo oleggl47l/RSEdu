@@ -1,0 +1,16 @@
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\bin\Debug\net8.0\RSEdu.Application.deps.json
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\bin\Debug\net8.0\RSEdu.Application.dll
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\bin\Debug\net8.0\RSEdu.Application.pdb
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\bin\Debug\net8.0\RSEdu.DataAccsess.dll
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\bin\Debug\net8.0\RSEdu.DataAccsess.pdb
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.csproj.AssemblyReference.cache
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.AssemblyInfoInputs.cache
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.AssemblyInfo.cs
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.csproj.CoreCompileInputs.cache
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.sourcelink.json
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Ap.E652E65A.Up2Date
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.dll
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\refint\RSEdu.Application.dll
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\RSEdu.Application.pdb
+D:\polytech\RSEdu\backendRSEdu\RSEdu.Application\obj\Debug\net8.0\ref\RSEdu.Application.dll

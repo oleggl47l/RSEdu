@@ -1,24 +1,24 @@
-.custom-navbar {
-    background-color: #023047;
-    display: flex;
-    justify-content: center; /* Центрирование по горизонтали */
-}
+/*.custom-navbar {*/
+/*    background-color: #023047;*/
+/*    display: flex;*/
+/*    justify-content: center; !* Центрирование по горизонтали *!*/
+/*}*/
 
-.custom-navbar .navbar-collapse {
-    justify-content: flex-end; /* Перемещение иконки "бургер" вправо */
-}
+/*.custom-navbar .navbar-collapse {*/
+/*    justify-content: flex-end; !* Перемещение иконки "бургер" вправо *!*/
+/*}*/
 
-.custom-navbar .navbar-nav {
-    align-items: center; /* Центрирование по вертикали */
-}
+/*.custom-navbar .navbar-nav {*/
+/*    align-items: center; !* Центрирование по вертикали *!*/
+/*}*/
 
-.custom-navbar .navbar-brand {
-    font-size: 24px;
-    margin-right: auto; /* Помещение бренда влево */
-}
+/*.custom-navbar .navbar-brand {*/
+/*    font-size: 24px;*/
+/*    margin-right: auto; !* Помещение бренда влево *!*/
+/*}*/
 
-.custom-navbar .nav-link,
-.custom-navbar .nav-dropdown-item {
-    margin-right: 15px; /* Отступ между элементами */
-    font-size: 18px;
-}
+/*.custom-navbar .nav-link,*/
+/*.custom-navbar .nav-dropdown-item {*/
+/*    margin-right: 15px; !* Отступ между элементами *!*/
+/*    font-size: 18px;*/
+/*}*/

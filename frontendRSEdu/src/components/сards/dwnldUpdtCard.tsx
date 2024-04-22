@@ -3,9 +3,9 @@ import './cardStyle.css';
 export const DwnldUpdtCard = () => {
     return (
         <Container className="container">
-            <Card className="card">
-                <Card.Title className="card-title">Start practicing with us</Card.Title>
-                <Card.Body className="card-body">
+            <Card className="card-custom">
+                <Card.Title className="card-custom-title">Start practicing with us</Card.Title>
+                <Card.Body className="card-custom-body">
                     <div className="left-content">
                         <Button className={"custom-button"}>Download</Button>
                     </div>
