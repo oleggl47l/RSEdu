@@ -24,13 +24,12 @@ const Registration: React.FC = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5037/api/Registration/registration', formData);
-            const token = response.data.token; // Предполагается, что сервер возвращает токен
+            const token = response.data.token;
             localStorage.setItem('token', token);
             // Переход на другую страницу после успешной регистрации
             navigate('/login');
         } catch (error) {
             console.error('Ошибка регистрации:', error);
-            // Обработка ошибок, например, вывод сообщения об ошибке пользователю
         }
     };
 

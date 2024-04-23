@@ -17,16 +17,10 @@ export enum Mode {
 }
 
 export const UpdateUserAdmin = ({mode, values, isModalOpen, handleCancel,  handleUpdate}: Props) => {
-    // const [firstName, setFirstName] = useState("");
-    // const [lastName, setLastName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [roleId, setRoleId] = useState("");
-
-
-    const [firstName, setFirstName] = useState(values.firstName || ''); // Значение по умолчанию пустая строка
-    const [lastName, setLastName] = useState(values.lastName || ''); // Значение по умолчанию пустая строка
-    const [email, setEmail] = useState(values.email || ''); // Значение по умолчанию пустая строка
-    const [roleId, setRoleId] = useState(values.roleId || ''); // Значение по умолчанию пустая строка
+    const [firstName, setFirstName] = useState(values.firstName || '');
+    const [lastName, setLastName] = useState(values.lastName || '');
+    const [email, setEmail] = useState(values.email || '');
+    const [roleId, setRoleId] = useState(values.roleId || '');
 
     useEffect(() => {
         setFirstName(values.firstName || '');
@@ -35,13 +29,6 @@ export const UpdateUserAdmin = ({mode, values, isModalOpen, handleCancel,  handl
         setRoleId(values.roleId || '');
     }, [values]);
 
-    /*useEffect(() => {
-        setFirstName(values.firstName);
-        setLastName(values.lastName);
-        setEmail(values.email);
-        setRoleId(values.roleId);
-
-    }, [values]);*/
 
     const handleOnOk = async () => {
         const userRequest = {userId: values.userId, firstName, lastName, email, roleId};

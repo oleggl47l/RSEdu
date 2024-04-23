@@ -32,7 +32,6 @@ const Login: React.FC = () => {
             window.location.href = "/"
         } catch (error) {
             console.error('Ошибка авторизации:', error);
-            // Обработка ошибок, например, вывод сообщения об ошибке пользователю
         }
     };
 
