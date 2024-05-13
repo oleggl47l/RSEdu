@@ -5,16 +5,21 @@ using RSEdu.DataAccsess.Models;
 
 namespace RSEdu.Application.Services;
 
-public class RegistrationService {
+public class UserRegistrationService {
     private readonly RSEduDbContext _context;
 
-    public RegistrationService(RSEduDbContext context) {
+    public UserRegistrationService(RSEduDbContext context) {
         _context = context;
     }
 
-    public async Task<User> RegisterAsync(string firstName, string lastName, string email, string password) {
+    public async Task<User> RegisterAsync(string firstName, string lastName, string email, string password, Guid groupId) {
         if (await _context.Users.AnyAsync(u => u.Email == email)) {
             throw new ArgumentException("User with this email already exists", nameof(email));
+        }
+        
+        var groupExists = await _context.Groups.AnyAsync(g => g.GroupId == groupId);
+        if (!groupExists) {
+            throw new ArgumentException("Group with this ID does not exist", nameof(groupId));
         }
         
         var user = new User {
@@ -23,7 +28,7 @@ public class RegistrationService {
             LastName = lastName,
             Email = email,
             PasswordHash = PasswordHasher.HashPassword(password),
-            // RoleId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6")
+            GroupId = groupId,
             RoleId = await _context.Roles
                 .Where(role => role.Name == "User")
                 .Select(role => role.RoleId)

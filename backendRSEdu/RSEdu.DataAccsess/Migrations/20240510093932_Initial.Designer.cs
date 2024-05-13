@@ -12,7 +12,7 @@ using RSEdu.DataAccsess;
 namespace RSEdu.DataAccsess.Migrations
 {
     [DbContext(typeof(RSEduDbContext))]
-    [Migration("20240421133047_Initial")]
+    [Migration("20240510093932_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -24,6 +24,22 @@ namespace RSEdu.DataAccsess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("RSEdu.DataAccsess.Models.Group", b =>
+                {
+                    b.Property<Guid>("GroupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("GroupId");
+
+                    b.ToTable("Groups", (string)null);
+                });
 
             modelBuilder.Entity("RSEdu.DataAccsess.Models.Role", b =>
                 {
@@ -57,6 +73,9 @@ namespace RSEdu.DataAccsess.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
+                    b.Property<Guid>("GroupId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -72,6 +91,8 @@ namespace RSEdu.DataAccsess.Migrations
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("GroupId");
+
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users", (string)null);
@@ -79,11 +100,19 @@ namespace RSEdu.DataAccsess.Migrations
 
             modelBuilder.Entity("RSEdu.DataAccsess.Models.User", b =>
                 {
+                    b.HasOne("RSEdu.DataAccsess.Models.Group", "Group")
+                        .WithMany()
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RSEdu.DataAccsess.Models.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Group");
 
                     b.Navigation("Role");
                 });

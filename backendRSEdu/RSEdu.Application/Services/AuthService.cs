@@ -17,7 +17,10 @@ public class AuthService {
     }
 
     public async Task<string> AuthenticateAsync(string email, string password) {
-        var user = await _context.Users.Include(user => user.Role).FirstOrDefaultAsync(u => u.Email == email);
+        var user = await _context.Users
+            .Include(user => user.Role)
+            .Include(user => user.Group)
+            .FirstOrDefaultAsync(u => u.Email == email);
 
         if (user == null) {
             return null;
@@ -32,7 +35,8 @@ public class AuthService {
             new Claim(ClaimTypes.GivenName, user.FirstName),
             new Claim(ClaimTypes.Surname, user.LastName),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role.Name)
+            new Claim(ClaimTypes.Role, user.Role?.Name ?? string.Empty),
+            new Claim("Group", user.Group?.Name ?? string.Empty)
         };
 
         var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AuthConfig.KEY));

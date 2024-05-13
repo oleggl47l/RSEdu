@@ -26,10 +26,14 @@ builder.Services.AddDbContext<RSEduDbContext>(options => options.UseNpgsql(conne
 builder.Services.AddScoped<ICRUDService<Role>, RoleCRUDService>();
 builder.Services.AddScoped<IRepository<Role>, RoleRepository>();
 
+builder.Services.AddScoped<ICRUDService<Group>, GroupCRUDService>();
+builder.Services.AddScoped<IRepository<Group>, GroupRepository>();
+
 builder.Services.AddScoped<ICRUDService<User>, UserCRUDService>();
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
 
-builder.Services.AddScoped<RegistrationService>();
+builder.Services.AddScoped<UserRegistrationService>();
+builder.Services.AddScoped<TeacherRegistrationService>();
 builder.Services.AddScoped<AuthService>();
 
 builder.Services.AddSwaggerGen(opt => {
@@ -58,6 +62,9 @@ builder.Services.AddSwaggerGen(opt => {
 builder.Services.AddAuthorization(options => {
     options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
     options.AddPolicy("User", policy => policy.RequireRole("User"));
+    options.AddPolicy("Teacher", policy => policy.RequireRole("Teacher"));
+    options.AddPolicy("AdmTeach", policy =>
+        policy.RequireRole("Admin", "Teacher"));
 });
 builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RSEdu.Application.Interfaces;
+using RSEdu.Application.Security;
 using RSEdu.DataAccsess.Models;
 
 namespace RSEdu.API.Controllers;
@@ -13,6 +14,7 @@ namespace RSEdu.API.Controllers;
 
 public class UserCRUDController(ICRUDService<User> icrudService) : ControllerBase {
     
+    [Authorize(Policy = "Admin")]
     [HttpGet]
     public async Task<ActionResult<List<User>>> GetAllUsers() {
         var User = await icrudService.GetAll();
@@ -52,7 +54,9 @@ public class UserCRUDController(ICRUDService<User> icrudService) : ControllerBas
         existingUser.FirstName = user.FirstName;
         existingUser.LastName = user.LastName;
         existingUser.Email = user.Email;
-        // existingUser.RoleId = user.RoleId;
+        // existingUser.PasswordHash = PasswordHasher.HashPassword(user.PasswordHash);
+        existingUser.RoleId = user.RoleId;
+        existingUser.GroupId = user.GroupId;
 
         var result = await icrudService.Update(existingUser);
         return Ok(result);

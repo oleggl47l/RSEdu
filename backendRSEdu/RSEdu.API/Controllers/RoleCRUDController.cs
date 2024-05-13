@@ -13,8 +13,8 @@ namespace RSEdu.API.Controllers;
 public class RoleCRUDController(ICRUDService<Role> icrudService) : ControllerBase {
     [HttpGet]
     public async Task<ActionResult<List<Role>>> GetAllRoles() {
-        var books = await icrudService.GetAll();
-        return Ok(books);
+        var roles = await icrudService.GetAll();
+        return Ok(roles);
     }
 
     [HttpGet("{id}")]
