@@ -54,11 +54,12 @@ export const Slider = () => {
     return (
         <div className="slider" style={{ paddingBottom: '20px' }}>
             <div className="carousel-wrapper">
-                <input id="slide1" type="radio" name="controls" checked={currentSlide === 1} />
-                <input id="slide2" type="radio" name="controls" checked={currentSlide === 2} />
-                <input id="slide3" type="radio" name="controls" checked={currentSlide === 3} />
-                <input id="slide4" type="radio" name="controls" checked={currentSlide === 4} />
-                <input id="slide5" type="radio" name="controls" checked={currentSlide === 5} />
+                <input id="slide1" type="radio" name="controls" defaultChecked={currentSlide === 1}/>
+                <input id="slide2" type="radio" name="controls" defaultChecked={currentSlide === 2}/>
+                <input id="slide3" type="radio" name="controls" defaultChecked={currentSlide === 3}/>
+                <input id="slide4" type="radio" name="controls" defaultChecked={currentSlide === 4}/>
+                <input id="slide5" type="radio" name="controls" defaultChecked={currentSlide === 5}/>
+
 
                 <label htmlFor="slide1" className="nav-dot" onClick={() => handleSlideChange(1)}></label>
                 <label htmlFor="slide2" className="nav-dot" onClick={() => handleSlideChange(2)}></label>
@@ -66,17 +67,27 @@ export const Slider = () => {
                 <label htmlFor="slide4" className="nav-dot" onClick={() => handleSlideChange(4)}></label>
                 <label htmlFor="slide5" className="nav-dot" onClick={() => handleSlideChange(5)}></label>
 
-                <label htmlFor="slide1" className="left-arrow" onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
-                <label htmlFor="slide2" className="left-arrow" onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
-                <label htmlFor="slide3" className="left-arrow" onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
-                <label htmlFor="slide4" className="left-arrow" onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
-                <label htmlFor="slide5" className="left-arrow" onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
+                <label htmlFor="slide1" className="left-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
+                <label htmlFor="slide2" className="left-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
+                <label htmlFor="slide3" className="left-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
+                <label htmlFor="slide4" className="left-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
+                <label htmlFor="slide5" className="left-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 1 ? 5 : currentSlide - 1)}>&lt;</label>
 
-                <label htmlFor="slide1" className="right-arrow" onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
-                <label htmlFor="slide2" className="right-arrow" onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
-                <label htmlFor="slide3" className="right-arrow" onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
-                <label htmlFor="slide4" className="right-arrow" onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
-                <label htmlFor="slide5" className="right-arrow" onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
+                <label htmlFor="slide1" className="right-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
+                <label htmlFor="slide2" className="right-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
+                <label htmlFor="slide3" className="right-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
+                <label htmlFor="slide4" className="right-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
+                <label htmlFor="slide5" className="right-arrow"
+                       onClick={() => handleSlideChange(currentSlide === 5 ? 1 : currentSlide + 1)}>&gt;</label>
 
                 <div className="carousel">
                     <ul>

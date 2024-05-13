@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {Button, Card, Container, Form} from "react-bootstrap";
-import {extractRoleFromToken} from "../../Services/extractRoleFromToken.ts";
-import {extractUserIdFromToken} from "../../Services/extractUserIdFromToken.ts";
+import { Button, Card, Container, Form, Modal } from "react-bootstrap";
+import { extractRoleFromToken } from "../../Services/extractRoleFromToken.ts";
+import { extractUserIdFromToken } from "../../Services/extractUserIdFromToken.ts";
 
 const Login: React.FC = () => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
+    const [showError, setShowError] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setFormData(prevState => ({
             ...prevState,
             [name]: value
         }));
     };
+
+    const handleCloseError = () => setShowError(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -25,13 +28,13 @@ const Login: React.FC = () => {
             const token = response.data.token;
             localStorage.setItem('token', token);
             const role = extractRoleFromToken(token);
-            const userId = extractUserIdFromToken(token); // Получаем идентификатор пользователя из токена
-            console.log('Полученная роль:', role); // Выводим роль в консоль
-            console.log('Id пользователя:', userId); // Выводим роль в консоль
-            // Переход на другую страницу после успешной авторизации
+            const userId = extractUserIdFromToken(token);
+            console.log('Полученная роль:', role);
+            console.log('Id пользователя:', userId);
             window.location.href = "/"
         } catch (error) {
             console.error('Ошибка авторизации:', error);
+            setShowError(true);
         }
     };
 
@@ -55,6 +58,12 @@ const Login: React.FC = () => {
                     </div>
                 </Form>
             </Card>
+            <Modal show={showError} onHide={handleCloseError} keyboard={false} centered>
+                <Modal.Body className="bg-danger text-white text-center" style={{ position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '0', right: '5px', cursor: 'pointer' }} onClick={handleCloseError}>×</div>
+                    Error: Email or Password is incorrect.
+                </Modal.Body>
+            </Modal>
         </Container>
     )
 }

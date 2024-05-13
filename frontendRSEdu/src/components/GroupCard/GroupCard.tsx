@@ -1,16 +1,15 @@
-// AdminRoleCard.tsx
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { DeleteConfirmationModal } from '../DeleteConfirmation';
 
-interface AdminRoleCardProps {
-    role: Roles;
+interface AdminGroupCardProps {
+    group: Groups;
     handleDelete: (id: string) => void;
-    handleOpen: (role: Roles) => void;
+    handleOpen: (group: Groups) => void;
 }
 
-const AdminRoleCard: React.FC<AdminRoleCardProps> = ({ role, handleDelete, handleOpen }) => {
+const AdminGroupCard: React.FC<AdminGroupCardProps> = ({ group, handleDelete, handleOpen }) => {
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
     const handleDeleteConfirmation = () => {
@@ -18,17 +17,17 @@ const AdminRoleCard: React.FC<AdminRoleCardProps> = ({ role, handleDelete, handl
     };
 
     const handleDeleteConfirmed = () => {
-        handleDelete(role.roleId); // Подставьте ваше поле для идентификатора роли
+        handleDelete(group.groupId);
         setShowConfirmationModal(false);
     };
 
     return (
-        <Card style={{ width: '18rem' }} key={role.roleId}>
+        <Card style={{ width: '18rem' }} key={group.groupId}>
             <Card.Body>
-                <Card.Title><strong>Role ID: </strong>{role.roleId}</Card.Title>
-                <Card.Text><strong>Role Name:</strong> {role.name}<br/></Card.Text>
+                <Card.Title><strong>Group ID: </strong>{group.groupId}</Card.Title>
+                <Card.Text><strong>Group Name:</strong> {group.name}<br/></Card.Text>
                 <div style={{display: 'flex', justifyContent: 'center', gap: '10px' }}>
-                    <Button variant="primary" onClick={() => handleOpen(role)}>Edit</Button>
+                    <Button variant="primary" onClick={() => handleOpen(group)}>Edit</Button>
                     <Button variant="danger" onClick={handleDeleteConfirmation}>Delete</Button>
                     <DeleteConfirmationModal
                         show={showConfirmationModal}
@@ -41,4 +40,4 @@ const AdminRoleCard: React.FC<AdminRoleCardProps> = ({ role, handleDelete, handl
     );
 };
 
-export default AdminRoleCard;
+export default AdminGroupCard;

@@ -24,12 +24,13 @@ export const AdminUserCard = ({user, handleDelete, handleOpen}: AdminUserCardPro
     return (
         <Card style={{width: '18rem'}} key={user.userId}>
             <Card.Body>
-                <Card.Title>User ID: {user.userId}</Card.Title>
+                <Card.Title><strong>User ID: </strong>{user.userId}</Card.Title>
                 <Card.Text>
                     <strong>First Name:</strong> {user.firstName}<br/>
                     <strong>Last Name:</strong> {user.lastName}<br/>
                     <strong>Email:</strong> {user.email}<br/>
                     <strong>Role ID:</strong> {user.roleId}<br/>
+                    <strong>Group ID:</strong> {user.groupId}<br/>
                 </Card.Text>
                 <div style={{display: "flex", justifyContent: "center", gap: "10px"}}>
                     <Button variant="primary" onClick={() => handleOpen(user)}>Edit</Button>

@@ -21,17 +21,19 @@ export const UpdateUserAdmin = ({mode, values, isModalOpen, handleCancel,  handl
     const [lastName, setLastName] = useState(values.lastName || '');
     const [email, setEmail] = useState(values.email || '');
     const [roleId, setRoleId] = useState(values.roleId || '');
+    const [groupId, setGroupId] = useState(values.groupId || '');
 
     useEffect(() => {
         setFirstName(values.firstName || '');
         setLastName(values.lastName || '');
         setEmail(values.email || '');
         setRoleId(values.roleId || '');
+        setGroupId(values.groupId || '');
     }, [values]);
 
 
     const handleOnOk = async () => {
-        const userRequest = {userId: values.userId, firstName, lastName, email, roleId};
+        const userRequest = {userId: values.userId, firstName, lastName, email, roleId, groupId};
         handleUpdate(values.userId, userRequest);
     };
 
@@ -57,6 +59,10 @@ export const UpdateUserAdmin = ({mode, values, isModalOpen, handleCancel,  handl
                     <Form.Group controlId="roleId">
                         <Form.Label>Role ID</Form.Label>
                         <Form.Control type="text" value={roleId} onChange={(e) => setRoleId(e.target.value)}/>
+                    </Form.Group>
+                    <Form.Group controlId="groupId">
+                        <Form.Label>Group ID</Form.Label>
+                        <Form.Control type="text" value={groupId} onChange={(e) => setGroupId(e.target.value)}/>
                     </Form.Group>
                 </Form>
             </Modal.Body>

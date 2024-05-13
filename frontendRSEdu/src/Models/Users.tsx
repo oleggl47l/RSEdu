@@ -4,4 +4,5 @@ interface User {
     lastName: string;
     email: string;
     roleId?: string;
+    groupId?: string;
 }

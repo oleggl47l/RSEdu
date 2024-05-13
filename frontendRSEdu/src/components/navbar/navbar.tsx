@@ -48,6 +48,12 @@ export const Navbar = () => {
                             <NavDropdown title="Admin" id="navbarScrollingDropdown">
                                 <NavDropdown.Item href="/usersPage">Users</NavDropdown.Item>
                                 <NavDropdown.Item href="/rolesPage">Roles</NavDropdown.Item>
+                                <NavDropdown.Item href="/groupsPage">Groups</NavDropdown.Item>
+                            </NavDropdown>
+                        )}
+                        {isAuthenticated && role === 'Teacher' && (
+                            <NavDropdown title="Teacher" id="navbarScrollingDropdown">
+                                <NavDropdown.Item href="/groupsPage">Groups</NavDropdown.Item>
                             </NavDropdown>
                         )}
                         <Nav.Link href="/newsPage">News</Nav.Link>

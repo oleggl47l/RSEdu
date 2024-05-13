@@ -5,6 +5,7 @@ export interface UserRequest {
     lastName: string;
     email: string;
     roleId?: string;
+    groupId?: string;
 }
 
 export const getAllUsers = async () => {
