@@ -3,6 +3,7 @@ import CreateUpdateGroup, {Mode} from '../components/GroupCard/CreateUpdateGroup
 import {GroupRequest, createGroup, deleteGroup, getAllGroups, updateGroup} from '../Services/groups';
 import {useEffect, useState} from "react";
 import AdminGroupCard from "../components/GroupCard/GroupCard.tsx";
+import {Spinner} from "react-bootstrap";
 
 export default function GroupsPage() {
     const defaultValues = {
@@ -66,9 +67,11 @@ export default function GroupsPage() {
 
     return (
         <div style={{margin: '10px', textAlign: 'center'}}>
-            <Button variant="primary" style={{marginBlock: '10px'}} size="lg" onClick={openModal}>
-                Add group
-            </Button>
+            {!loading && (
+                <Button variant="primary" style={{ marginBlock: '10px' }} size="lg" onClick={openModal}>
+                    Add group
+                </Button>
+            )}
 
             <CreateUpdateGroup
                 mode={mode}
@@ -80,7 +83,9 @@ export default function GroupsPage() {
             />
 
             {loading ? (
-                <h1>Loading . . .</h1>
+                <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                    <Spinner animation="border"/>
+                </div>
             ) : (
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center'}}>
                     {roles.map((group: Groups) => (

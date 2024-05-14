@@ -21,7 +21,7 @@ export const Navbar = () => {
     };
 
     return (
-        <BootstrapNavbar expand="lg" style={{ backgroundColor: '#003049' }} variant={"dark"}>
+        <BootstrapNavbar expand="lg" fixed="top" style={{ backgroundColor: '#003049' }} variant={"dark"}>
             <Container style={{margin: 'auto'}}>
 
                 <BootstrapNavbar.Brand href="/">

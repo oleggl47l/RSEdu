@@ -2,6 +2,7 @@ import { UpdateUserAdmin, Mode } from "../components/UserCardAdmin/UpdateUserAdm
 import { AdminUserCard } from "../components/UserCardAdmin/UserCardAdmin.tsx";
 import { useEffect, useState } from "react";
 import { UserRequest, deleteUser, getAllUsers, updateUser } from "../Services/users.tsx";
+import {Spinner} from "react-bootstrap";
 
 export default function UsersPageAdmin() {
     const defaultValues = {
@@ -66,7 +67,10 @@ export default function UsersPageAdmin() {
                 handleUpdate={handleUpdateUser}
             />
 
-            {loading ? (<h1>Loading . . .</h1>
+            {loading ? (
+                <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                    <Spinner animation="border"/>
+                </div>
             ) : (
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center" }}>
                     {users.map((user: User) => (

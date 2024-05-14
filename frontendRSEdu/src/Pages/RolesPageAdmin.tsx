@@ -3,6 +3,7 @@ import CreateUpdateRole, {Mode} from '../components/RoleCardAdmin/CreateUpdateRo
 import AdminRoleCard from '../components/RoleCardAdmin/RoleCardAdmin.tsx';
 import {RoleRequest, createRole, deleteRole, getAllRoles, updateRole} from '../Services/roles';
 import {useEffect, useState} from "react";
+import {Spinner} from "react-bootstrap";
 
 export default function RolesPageAdmin() {
     const defaultValues = {
@@ -66,9 +67,11 @@ export default function RolesPageAdmin() {
 
     return (
         <div style={{margin: '10px', textAlign: 'center'}}>
-            <Button variant="primary" style={{marginBlock: '10px'}} size="lg" onClick={openModal}>
-                Add role
-            </Button>
+            {!loading && (
+                <Button variant="primary" style={{marginBlock: '10px'}} size="lg" onClick={openModal}>
+                    Add role
+                </Button>
+            )}
 
             <CreateUpdateRole
                 mode={mode}
@@ -80,7 +83,9 @@ export default function RolesPageAdmin() {
             />
 
             {loading ? (
-                <h1>Loading . . .</h1>
+                <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                    <Spinner animation="border"/>
+                </div>
             ) : (
                 <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center'}}>
                     {roles.map((role: Roles) => (

@@ -3,6 +3,7 @@ import { extractUserIdFromToken } from '../Services/extractUserIdFromToken.ts';
 import { getUserById, updateUser, UserRequest } from '../Services/users.tsx';
 import { UserProfileCard } from "../components/UserProfileCard/UserProfileCard.tsx";
 import { Mode, UpdateUser } from "../components/UserProfileCard/UpdateUser.tsx";
+import {Spinner} from "react-bootstrap";
 
 const UserProfilePage: React.FC = () => {
     const defaultValues = {
@@ -65,7 +66,9 @@ const UserProfilePage: React.FC = () => {
             />
 
             {loading ? (
-                <h1>Loading . . .</h1>
+                <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+                    <Spinner animation="border"/>
+                </div>
             ) : (
                 <div>
                     <div style={{display: "flex", justifyContent: "center"}}>

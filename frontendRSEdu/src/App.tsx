@@ -22,33 +22,36 @@ function App() {
 
     return (
         <>
-            <div>
+            <div style={{minHeight: '100vh', paddingTop: '100px', display: 'flex', flexDirection: 'column'}}>
                 <BrowserRouter>
-                    <Navbar/>
-                    <Routes>
-                        <Route path={"/"} element={<MainPage/>}></Route>
-                        <Route path={"/usersPage"} element={<UsersPageAdmin/>}></Route>
-                        <Route path={"/rolesPage"} element={<RolesPageAdmin/>}></Route>
-                        <Route path={"/groupsPage"} element={<GroupsPage/>}></Route>
-                        <Route path={"/registration"} element={<Registration/>}></Route>
-                        <Route path={"/userRegistration"} element={<UserRegistration/>}></Route>
-                        <Route path={"/teacherRegistration"} element={<TeacherRegistration/>}></Route>
-                        <Route path={"/login"} element={<Login/>}></Route>
-                        <Route path={"/profile"} element={<UserProfilePage/>}></Route>
-                    </Routes>
-                </BrowserRouter>
-            </div>
+                    <div style={{flex: '1'}}>
 
-            <div style={{marginTop: "140px"}}>
+                        <Navbar/>
+                        <Routes>
+                            <Route path={"/"} element={<MainPage/>}></Route>
+                            <Route path={"/usersPage"} element={<UsersPageAdmin/>}></Route>
+                            <Route path={"/rolesPage"} element={<RolesPageAdmin/>}></Route>
+                            <Route path={"/groupsPage"} element={<GroupsPage/>}></Route>
+                            <Route path={"/registration"} element={<Registration/>}></Route>
+                            <Route path={"/userRegistration"} element={<UserRegistration/>}></Route>
+                            <Route path={"/teacherRegistration"} element={<TeacherRegistration/>}></Route>
+                            <Route path={"/login"} element={<Login/>}></Route>
+                            <Route path={"/profile"} element={<UserProfilePage/>}></Route>
+                        </Routes>
+                    </div>
+                </BrowserRouter>
                 <Footer/>
             </div>
+
+            {/*<div style={{marginTop: "40px"}}>*/}
+            {/*</div>*/}
 
             {/*<Slider/>*/}
             {/*<DwnldUpdtCard/>*/}
             {/*<NewsCard/>*/}
             {/*<Footer/>*/}
         </>
-    )
+    );
 }
 
 export default App
